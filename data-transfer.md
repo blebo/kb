@@ -9,6 +9,25 @@ Copies content of `SOURCE` to content of `DESTINATION`. Note trailing `/`.
 * `-v`: Verbose output.
 * `-P`: Keep partially transmitted files and show progess of transfer.
 
+---
+Data transferred with `rsync` via ssh:
+From remote to local:
+
+```
+rsync -avP -e ssh user@host:PATH/TO/SOURCE/ PATH/TO/DESTINATION/
+```
+
+From local to remote:
+
+```
+rsync -avP -e ssh PATH/TO/SOURCE/ user@host:PATH/TO/DESTINATION/
+```
+
+Copies content of `SOURCE` to content of `DESTINATION`. Note trailing `/`.
+* `-a`: Archive mode.
+* `-v`: Verbose output.
+* `-P`: Keep partially transmitted files and show progess of transfer.
+
 See [rsync](https://download.samba.org/pub/rsync/rsync.html) man page for further documentation.
 
 ---
