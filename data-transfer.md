@@ -51,3 +51,10 @@ O. Tange (2011): GNU Parallel - The Command-Line Power Tool,
 ```
 
 ---
+Copy folder and sub-tree, into another folder:
+
+```
+cp -R SOURCE PATH/TO/DEST/
+```
+
+---
