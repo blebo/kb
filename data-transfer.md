@@ -5,9 +5,11 @@ Data can be recovered on mountable drive with `rsync`
 rsync -avP PATH/TO/SOURCE/ PATH/TO/DESTINATION/
 ```
 Copies content of `SOURCE` to content of `DESTINATION`. Note trailing `/`.
+
 * `-a`: Archive mode.
 * `-v`: Verbose output.
 * `-P`: Keep partially transmitted files and show progess of transfer.
+* `--no-perms`: Useful for copying to Windows shares to avoid operation not permitted on Freenas. May also need to use -A to preserve ACL from source.
 
 ---
 Data transferred with `rsync` via ssh:
@@ -24,6 +26,7 @@ rsync -avP -e ssh PATH/TO/SOURCE/ user@host:PATH/TO/DESTINATION/
 ```
 
 Copies content of `SOURCE` to content of `DESTINATION`. Note trailing `/`.
+
 * `-a`: Archive mode.
 * `-v`: Verbose output.
 * `-P`: Keep partially transmitted files and show progess of transfer.
@@ -37,6 +40,7 @@ Download multiple files with `wget` in parallel
 ```
 cat PATH/TO/URL.LIST | parallel --will-cite -j N wget -c {}
 ```
+
 * `-j N`: `parallel` switch for `N` number of parallel processes to run.
 * `-c`: `wget` switch to resume download if applicable.
 * `{}`: Placeholder for current URL from `URL.LIST`.
