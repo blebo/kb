@@ -9,7 +9,7 @@ Copies content of `SOURCE` to content of `DESTINATION`. Note trailing `/`.
 * `-a`: Archive mode.
 * `-v`: Verbose output.
 * `-P`: Keep partially transmitted files and show progess of transfer.
-* `--no-perms`: Useful for copying to Windows shares to avoid operation not permitted on Freenas. May also need to use -A to preserve ACL from source.
+* `--no-perms`: Useful for copying to destination that is a Windows share on FreeNAS, in order to avoid 'Operation not permitted' error. May also need to use with `-A` to preserve ACL from source.
 
 ---
 Data transferred with `rsync` via ssh:
@@ -30,6 +30,8 @@ Copies content of `SOURCE` to content of `DESTINATION`. Note trailing `/`.
 * `-a`: Archive mode.
 * `-v`: Verbose output.
 * `-P`: Keep partially transmitted files and show progess of transfer.
+* `--no-perms`: Useful for copying to destination that is a Windows share on FreeNAS, in order to avoid 'Operation not permitted' error. May also need to use with `-A` to preserve ACL from source.
+
 
 See [rsync](https://download.samba.org/pub/rsync/rsync.html) man page for further documentation.
 
