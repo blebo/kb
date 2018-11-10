@@ -8,7 +8,7 @@
 apt update && apt dist-upgrade
 ```
 
-### Clean out old kernels
+### Clean out old kernels (may not work with Proxmox 5.2)
 Check:
 
 ```
@@ -21,6 +21,12 @@ Apply:
 ```
 dpkg -l pve-kernel-* | awk '/^ii/{ print $2}' | grep -v -e `uname -r | cut -f1,2 -d"-"` | grep -e [0-9] | xargs sudo apt-get -y purge
 ```
+
+### Unlock VMs in Proxmox
+
+From: https://www.commandlinefu.com/commands/view/24234/unlock-vms-in-proxmox
+
+    for i in $(qm list | awk '{ print $1 }' | grep -v VMID); do echo "Unlocking:" $i; qm unlock $i; echo "Unlocked"; done
 
 ## LXC Containers
 

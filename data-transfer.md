@@ -60,3 +60,12 @@ cp -R SOURCE PATH/TO/DEST/
 ```
 
 ---
+Get All Docs from webpage
+
+From: https://www.commandlinefu.com/commands/view/24264/get-all-documents-docdocxxlsxlsxpdfpptpptx...-linked-in-a-webpage
+
+
+    curl https://www.domain.com/ | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*.*(doc|docx|xls|xlsx|ppt|pptx|pdf)" | sort | uniq > list.txt | wget list.txt
+
+
+---
