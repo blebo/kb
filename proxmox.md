@@ -28,6 +28,11 @@ From: https://www.commandlinefu.com/commands/view/24234/unlock-vms-in-proxmox
 
     for i in $(qm list | awk '{ print $1 }' | grep -v VMID); do echo "Unlocking:" $i; qm unlock $i; echo "Unlocked"; done
 
+### check health of last reboot/shutdown 
+
+    last -xF reboot shutdown | head
+
+
 ## LXC Containers
 
 ## KVM/QEMU Guests
