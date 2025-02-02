@@ -12,3 +12,10 @@
 
 ## Time Machine
 
+## iCloud
+
+### Network Check
+
+    networkquality
+    
+    networkquality -s
